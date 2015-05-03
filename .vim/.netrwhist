@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/lh4ckg/env/project/hotel/app'
+let g:netrw_dirhist_2='/home/lh4ckg/env/project/hotel/app/templatetags'
+let g:netrw_dirhist_3='/home/lh4ckg/env/project/hotel/app'
