@@ -67,3 +67,24 @@ alias sa="django-admin.py startapp"
 # runserver
 alias r="python manage.py runserver"
 
+###########################
+##         git           ##
+###########################
+
+# git status
+alias gs="git status"
+
+# git add
+alias ga="git add"
+
+# git commit
+alias gc="git commit -m"
+
+# git pull
+alias gpl="git pull"
+
+# git push
+alias gps="git push"
+
+# git log
+alias gl="git log"
