@@ -86,8 +86,14 @@ alias gc="git commit -m"
 # git pull
 alias gpl="git pull"
 
+# git pull origin master
+alias gplo="git pull origin master"
+
 # git push
-alias gps="git push origin master"
+alias gps="git push"
+
+# git push origin master
+alias gpso="git push origin master"
 
 # git log
 alias gl="git log"
@@ -98,9 +104,21 @@ alias gr="git remote"
 # git remote -v
 alias grv="git remote -v"
 
-# git remote add repo
-alias gra="git remote add origin"
+# git remote add
+alias gra="git remote add"
 
-# git remote remove repo
-alias grr="git remote remove origin"
+# git remote add origin repo
+alias grao="git remote add origin"
 
+# git remote remove
+alias grr="git remote remove"
+
+# git remote remove origin repo
+alias grro="git remote remove origin"
+
+
+################
+##   Ruby     ##
+################
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
