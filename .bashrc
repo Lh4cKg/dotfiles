@@ -71,6 +71,9 @@ alias r="python manage.py runserver"
 ##         git           ##
 ###########################
 
+# git init
+alias gi="git init"
+
 # git status
 alias gs="git status"
 
