@@ -84,7 +84,20 @@ alias gc="git commit -m"
 alias gpl="git pull"
 
 # git push
-alias gps="git push"
+alias gps="git push origin master"
 
 # git log
 alias gl="git log"
+
+# git remote
+alias gr="git remote"
+
+# git remote -v
+alias grv="git remote -v"
+
+# git remote add repo
+alias gra="git remote add origin"
+
+# git remote remove repo
+alias grr="git remote remove origin"
+
