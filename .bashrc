@@ -21,21 +21,21 @@ bind '"\e[B": history-search-forward'
 
 # git completion
 
-
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+############################
+##  bash custom commands  ##
+############################
 
-# my terminal commands
-
-# hotel
+# hotel -> temporary command
 alias hotel="cd env/project && source bin/activate && cd hotel"
 
-# neweco
+# neweco -> temporary command
 alias neweco="cd env/project && source bin/activate && cd neweco"
 
-# store
+# store -> temporary command
 #alias store="cd env/project && source bin/activate && cd store"
 
 ###############################
@@ -59,7 +59,7 @@ alias m="python manage.py migrate"
 alias c="python manage.py createsuperuser"
 
 # startproject
-alias s="django-admin.py startproject"
+alias sp="django-admin.py startproject"
 
 # startapp
 alias sa="django-admin.py startapp"
