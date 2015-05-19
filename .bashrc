@@ -67,6 +67,22 @@ alias sa="django-admin.py startapp"
 # runserver
 alias r="python manage.py runserver"
 
+# python manage.py
+alias pm="python manage.py"
+
+# python manage.py shell
+alias pms="python manage.py shell"
+
+# python manage.py collectstatic
+alias pmc="python manage.py collectstatic"
+
+# python manage.py makemessages -l
+alias pmm="python manage.py makemessages -l"
+
+# python manage.py compilemessages -l
+alias pmc="python manage.py compilemessages -l"
+
+
 ###########################
 ##         git           ##
 ###########################
