@@ -8,18 +8,23 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-
+##############################
 # autocomplite xfce-terminal
+##############################
 
 complete -cf sudo
 complete -cf man
 
+########################
 # history completion
+########################
 
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+#####################
 # git completion
+#####################
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -137,4 +142,21 @@ alias grro="git remote remove origin"
 ##   Ruby     ##
 ################
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+iexport PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+##################
+##  pacman
+##################
+
+# sudo pacman -Syu
+alias update="sudo pacman -Syu"
+
+# sudo pacman -S
+alias install="sudo pacman -S"
+
+# sudo pacman -Ss
+alias search="sudo pacman -Ss"
+
+# sudo pacman
+alias pac="sudo pacmane"
+
