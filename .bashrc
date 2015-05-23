@@ -88,6 +88,23 @@ alias pmm="python manage.py makemessages -l"
 alias pmc="python manage.py compilemessages -l"
 
 
+##########################
+##       pip            ##
+##########################
+
+# pip install
+alias ppi="pip install"
+
+# pip remove
+alias ppr="pip remove"
+
+# pip install search
+alias pps="pip search"
+
+# pip list
+alias ppl="pip list"
+
+
 ###########################
 ##         git           ##
 ###########################
@@ -142,7 +159,7 @@ alias grro="git remote remove origin"
 ##   Ruby     ##
 ################
 
-iexport PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ##################
 ##  pacman
