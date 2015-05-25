@@ -49,7 +49,9 @@ alias neweco="cd env/project && source bin/activate && cd neweco"
 
 # virtualenv -> env/project activate
 alias env="cd env/project && source bin/activate"
-alias a="cd env/project && source bin/activate"
+
+# source bin/activare
+alias a="source bin/activate"
 
 # deactivate
 alias d="deactivate"
@@ -175,5 +177,7 @@ alias install="sudo pacman -S"
 alias search="sudo pacman -Ss"
 
 # sudo pacman
-alias pac="sudo pacmane"
+alias pac="sudo pacman"
 
+# sudo pacman -R 
+alias remove="sudo pacman -R"
