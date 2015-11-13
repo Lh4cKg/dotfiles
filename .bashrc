@@ -6,7 +6,19 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
+
+# PS1 = \n \[\e[1;37m\]┌─[\[\e[1;36m\] \d \[\e[1;31m\]\T \[\e[1;37m\]] \n\[\e[1;37m\] └─[ \[\e[1;34m\]@ \[\e[1;32m\]\w \[\e[1;37m\]]\[\e[1;35m\]---> \[\e[0;37m\]
+
+export PS1=" [ \[$(tput sgr0)\]\[\033[38;5;6m\]\d\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;160m\]\T\[$(tput sgr0)\]\[\033[38;5;15m\] ] \n [ \[$(tput sgr0)\]\[\033[38;5;40m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] {\[$(tput sgr0)\]\[\033[38;5;56m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]} ]\[$(tput sgr0)\]\[\033[38;5;1m\]-\[$(tput sgr0)\]\[\033[38;5;4m\]-\[$(tput sgr0)\]\[\033[38;5;19m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+  # function _update_ps1() {
+  #      PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+  #   }
+
+  #   if [ "$TERM" != "linux" ]; then
+  #       PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  #   fi
 
 ##############################
 # autocomplite xfce-terminal
