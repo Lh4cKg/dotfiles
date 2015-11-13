@@ -20,6 +20,35 @@ export PS1=" [ \[$(tput sgr0)\]\[\033[38;5;6m\]\d\[$(tput sgr0)\]\[\033[38;5;15m
   #       PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
   #   fi
 
+
+##############################
+# autocomplite xfce-terminal
+##############################
+
+complete -cf sudo
+complete -cf man
+
+#############################
+# history completion
+#############################
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+#############################
+# git completion
+#############################
+
+source ~/git-completion.bash
+
+#if [ -f ~/.git-completion.bash ]; then
+#  . ~/.git-completion.bash
+#fi
+
+############################
+##  bash custom commands  ##
+############################
+
 # Extract function
 function extract() {
           if [ -f $1 ] ; then
@@ -42,40 +71,77 @@ function extract() {
      fi
 }
 
-##############################
-# autocomplite xfce-terminal
-##############################
+# Create a TAR archive -> *.tar.gz
+function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
-complete -cf sudo
-complete -cf man
+# Create a ZIP archive -> *.zip.
+function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
-########################
-# history completion
-########################
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+#--------------------------
+#        Aliases          #
+#--------------------------
 
-#####################
-# git completion
-#####################
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias h='history'
+alias j='jobs -l'
+alias which='type -a'
+alias ..='cd ..'
 
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+# PATH variables
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
-############################
-##  bash custom commands  ##
-############################
+alias du='du -kh' 
+alias df='df -kTh'
 
+###################################
+#   ls commands
+###################################
+# Add colors for filetype and human-readable sizes by default on ls
+alias ls='ls -h --color'
+alias lx='ls -lXB'         #  Sort by extension.
+alias lk='ls -lSr'         #  Sort by size, biggest last.
+alias lt='ls -ltr'         #  Sort by date, most recent last.
+alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
+alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
+
+# ll directories first, with alphanumeric sorting
+alias ll="ls -lv --group-directories-first"
+alias lm='ll |more'        #  Pipe through 'more'
+alias lr='ll -R'           #  Recursive ls.
+alias la='ll -A'           #  Show hidden files.
+alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+
+# less 
+alias more='less'
+
+#################################
+#   my project commands
+##################################
 # hotel -> temporary command
-alias hotel="cd env/project && source bin/activate && cd hotel"
+#alias hotel="cd env/project && source bin/activate && cd hotel"
 
 # neweco -> temporary command
 alias neweco="cd env/project && source bin/activate && cd neweco"
 
 # store -> temporary command
 #alias store="cd env/project && source bin/activate && cd store"
+
+# profc -> temporary command
+#alias neweco="cd env/project && source bin/activate && cd profc"
+
+# signup -> temporary command
+alias neweco="cd env/project && source bin/activate && cd signup"
+
+# bsi -> temporary command
+alias neweco="cd env/project && source bin/activate && cd bsi"
+
+# bukinistebi -> temporary command
+alias neweco="cd old && source bin/activate && cd bukinistebi"
 
 ###############################
 ##  python3 custom commands  ##
@@ -84,11 +150,19 @@ alias neweco="cd env/project && source bin/activate && cd neweco"
 # virtualenv -> env/project activate
 alias env="cd env/project && source bin/activate"
 
+# virtualenv -> old/project activate
+alias oldp="cd old/project && source bin/activate"
+
+# virtualenv -> old activate
+alias old="cd old && source bin/activate"
+
 # source bin/activare
 alias a="source bin/activate"
+alias ac="source bin/activate"
 
 # deactivate
 alias d="deactivate"
+alias da="deactivate"
 
 # makemigrations
 alias mm="python manage.py makemigrations"
@@ -98,6 +172,7 @@ alias m="python manage.py migrate"
 
 # createsuperuser
 alias c="python manage.py createsuperuser"
+alias cs="python manage.py createsuperuser"
 
 # startproject
 alias sp="django-admin.py startproject"
@@ -107,6 +182,7 @@ alias sa="django-admin.py startapp"
 
 # runserver
 alias r="python manage.py runserver"
+alias mr="python manage.py runserver"
 
 # python manage.py
 alias pm="python manage.py"
@@ -115,7 +191,7 @@ alias pm="python manage.py"
 alias pms="python manage.py shell"
 
 # python manage.py collectstatic
-alias pmc="python manage.py collectstatic"
+alias pmcs="python manage.py collectstatic"
 
 # python manage.py makemessages -l
 alias pmm="python manage.py makemessages -l"
@@ -164,10 +240,10 @@ alias gpl="git pull"
 alias gplo="git pull origin master"
 
 # git push
-alias gps="git push"
+alias gps="git push -u"
 
 # git push origin master
-alias gpso="git push origin master"
+alias gpso="git push -u origin master"
 
 # git log
 alias gl="git log"
@@ -203,15 +279,43 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # sudo pacman -Syu
 alias update="sudo pacman -Syu"
+alias up="sudo pacman -Syu"
+
 
 # sudo pacman -S
 alias install="sudo pacman -S"
+alias in="sudo pacman -S"
 
 # sudo pacman -Ss
 alias search="sudo pacman -Ss"
+alias se="sudo pacman -Ss"
 
 # sudo pacman
 alias pac="sudo pacman"
 
 # sudo pacman -R 
 alias remove="sudo pacman -R"
+alias re="sudo pacman -R"
+
+#######################
+# yaourt 
+#######################
+
+# yaourt -Syu
+alias yupdate="yaourt -Syu"
+alias yup="yaourt -Syu"
+
+# yaourt -S
+alias yinstall="yaourt -S"
+alias yin="yaourt -S"
+
+# yaourt -Ss
+alias ysearch="yaourt -Ss"
+alias yse="yaourt -Ss"
+
+# yaourt
+alias ya="yaourt"
+
+# yaourt -R 
+alias yremove="yaourt -R"
+alias yre="yaourt -R"
