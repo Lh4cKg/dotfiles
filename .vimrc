@@ -41,6 +41,11 @@ Plugin 'tpope/vim-capslock'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'gcmt/taboo.vim'
 Plugin 'szw/Vim-CtrlSpace'
+Plugin 'miyakogi/sidepanel.vim'
+"Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/gundo.vim'
+Plugin 'Shougo/vimfiler.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -138,4 +143,69 @@ let g:airline#extensions#capslock#enabled = 1
 let g:airline#extensions#windowswap#enabled = 1
 let g:airline#extensions#windowswap#indicator_text = 'WS'
 let g:airline#extensions#taboo#enabled = 1
-let g:airline#extensions#ctrlspace#enabled = 1
+let g:airline#extensions#ctrlsipace#enabled = 1
+
+" Activate plugins in SidePanel
+let g:sidepanel_config = {}
+let g:sidepanel_config['nerdtree'] = {}
+let g:sidepanel_config['tagbar'] = {}
+let g:sidepanel_config['gundo'] = {}
+let g:sidepanel_config['buffergator'] = {}
+let g:sidepanel_config['vimfiler'] = {}
+
+" Set position (left or right) if neccesary (default: "left").
+let g:sidepanel_pos = "left"
+"Set width if neccesary (default: 32)
+let g:sidepanel_width = 26
+" To use rabbit-ui.vim
+"let g:sidepanel_use_rabbit_ui = 1
+nnoremap <silent> <Space>e :<C-u>SidePanel nerdtree<CR>
+nnoremap <silent> <Space>t :<C-u>SidePanel tagbar<CR>
+" nnoremap <silent> <Space>g :<C-u>SidePanel gundo<CR>
+" nnoremap <silent> <Space>l :<C-u>SidePanel<CR>
+let g:sidepanel_config['nerdtree'] = {'open': ['NERDTree']}
+let g:sidepanel_config['nerdtree'] = {'close': ['NERDTreeClose']}
+
+let g:sidepanel_config['nerdtree'] = {
+    \  'filetype': 'nerdtree',
+    \  'open': ['call sidepanel#init#nerdtree()'],
+    \  'close': ['NERDTreeClose'],
+    \  'position': {
+    \    'var': 'g:NERDTreeWinPos',
+    \    'param': {
+    \      'left': 'left',
+    \      'right': 'right',
+    \    },
+    \  },
+    \  'size': {
+    \    'var': 'g:NERDTreeWinSize',
+    \  },
+    \}
+
+function! sidepanel#init#nerdtree()
+  if filereadable('%')
+    execute "NERDTreeFind"
+  else
+    execute "NERDTreeCWD"
+  endif
+endfunction
+
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+:let g:vimfiler_as_default_explorer = 1
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_width = 60
+let g:gundo_preview_height = 40
+let g:gundo_right = 1
+nmap <F8> :TagbarToggle<CR>
+
+set nocompatible
+set hidden
+set showtabline=0
