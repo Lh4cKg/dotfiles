@@ -114,7 +114,7 @@ bind '"\e[B": history-search-forward'
 # git completion
 #############################
 
-source ~/git-completion.bash
+source ~/.git-completion.bash
 
 #if [ -f ~/.git-completion.bash ]; then
 #  . ~/.git-completion.bash
