@@ -132,16 +132,16 @@ alias neweco="cd env/project && source bin/activate && cd neweco"
 #alias store="cd env/project && source bin/activate && cd store"
 
 # profc -> temporary command
-#alias neweco="cd env/project && source bin/activate && cd profc"
+#alias profc="cd env/project && source bin/activate && cd profc"
 
 # signup -> temporary command
-alias neweco="cd env/project && source bin/activate && cd signup"
+alias signup="cd env/project && source bin/activate && cd signup"
 
 # bsi -> temporary command
-alias neweco="cd env/project && source bin/activate && cd bsi"
+alias bsi="cd env/project && source bin/activate && cd bsi"
 
 # bukinistebi -> temporary command
-alias neweco="cd old && source bin/activate && cd bukinistebi"
+alias bukinistebi="cd old && source bin/activate && cd bukinistebi"
 
 ###############################
 ##  python3 custom commands  ##
