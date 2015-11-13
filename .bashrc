@@ -6,19 +6,94 @@
 [[ $- != *i* ]] && return
 
 #alias ls='ls --color=auto'
+# git branch prompt
+source ~/.git-prompt.sh
+
+###################
+#  colors
+###################
+
+# Reset
+Color_Off='\e[0m'       # Text Reset
+
+# Regular Colors
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
+
+# Bold
+BBlack='\e[1;30m'       # Black
+BRed='\e[1;31m'         # Red
+BGreen='\e[1;32m'       # Green
+BYellow='\e[1;33m'      # Yellow
+BBlue='\e[1;34m'        # Blue
+BPurple='\e[1;35m'      # Purple
+BCyan='\e[1;36m'        # Cyan
+BWhite='\e[1;37m'       # White
+
+# Underline
+UBlack='\e[4;30m'       # Black
+URed='\e[4;31m'         # Red
+UGreen='\e[4;32m'       # Green
+UYellow='\e[4;33m'      # Yellow
+UBlue='\e[4;34m'        # Blue
+UPurple='\e[4;35m'      # Purple
+UCyan='\e[4;36m'        # Cyan
+UWhite='\e[4;37m'       # White
+
+# Background
+On_Black='\e[40m'       # Black
+On_Red='\e[41m'         # Red
+On_Green='\e[42m'       # Green
+On_Yellow='\e[43m'      # Yellow
+On_Blue='\e[44m'        # Blue
+On_Purple='\e[45m'      # Purple
+On_Cyan='\e[46m'        # Cyan
+On_White='\e[47m'       # White
+
+# High Intensity
+IBlack='\e[0;90m'       # Black
+IRed='\e[0;91m'         # Red
+IGreen='\e[0;92m'       # Green
+IYellow='\e[0;93m'      # Yellow
+IBlue='\e[0;94m'        # Blue
+IPurple='\e[0;95m'      # Purple
+ICyan='\e[0;96m'        # Cyan
+IWhite='\e[0;97m'       # White
+
+# Bold High Intensity
+BIBlack='\e[1;90m'      # Black
+BIRed='\e[1;91m'        # Red
+BIGreen='\e[1;92m'      # Green
+BIYellow='\e[1;93m'     # Yellow
+BIBlue='\e[1;94m'       # Blue
+BIPurple='\e[1;95m'     # Purple
+BICyan='\e[1;96m'       # Cyan
+BIWhite='\e[1;97m'      # White
+
+# High Intensity backgrounds
+On_IBlack='\e[0;100m'   # Black
+On_IRed='\e[0;101m'     # Red
+On_IGreen='\e[0;102m'   # Green
+On_IYellow='\e[0;103m'  # Yellow
+On_IBlue='\e[0;104m'    # Blue
+On_IPurple='\e[0;105m'  # Purple
+On_ICyan='\e[0;106m'    # Cyan
+On_IWhite='\e[0;107m'   # White
+# custom colors
+NF1='\033[38;5;6m'
+NF2='\033[38;5;56m'
+
 #PS1='[\u@\h \W]\$ '
 
 # PS1 = \n \[\e[1;37m\]┌─[\[\e[1;36m\] \d \[\e[1;31m\]\T \[\e[1;37m\]] \n\[\e[1;37m\] └─[ \[\e[1;34m\]@ \[\e[1;32m\]\w \[\e[1;37m\]]\[\e[1;35m\]---> \[\e[0;37m\]
 
-export PS1=" [ \[$(tput sgr0)\]\[\033[38;5;6m\]\d\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;160m\]\T\[$(tput sgr0)\]\[\033[38;5;15m\] ] \n [ \[$(tput sgr0)\]\[\033[38;5;40m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] {\[$(tput sgr0)\]\[\033[38;5;56m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]} ]\[$(tput sgr0)\]\[\033[38;5;1m\]-\[$(tput sgr0)\]\[\033[38;5;4m\]-\[$(tput sgr0)\]\[\033[38;5;19m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-
-  # function _update_ps1() {
-  #      PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-  #   }
-
-  #   if [ "$TERM" != "linux" ]; then
-  #       PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-  #   fi
+export PS1="\[$NF1\]\d\[$Red\] \T\[$White\]\n\[$Cyan\][\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]]\[$Red\]-\[$Blue\]-\[$Blue\]>\[$Green\] "
 
 
 ##############################
@@ -319,3 +394,32 @@ alias ya="yaourt"
 # yaourt -R 
 alias yremove="yaourt -R"
 alias yre="yaourt -R"
+
+
+####################################
+## powerline config
+####################################
+
+# function _update_ps1() {
+#      PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+#   }
+
+#   if [ "$TERM" != "linux" ]; then
+#       PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#   fi
+
+#####################################
+##     liquidprompt config
+#####################################
+
+# [[ $- = *i* ]] && source /usr/bin/liquidprompt
+
+# # LP_PS1_PREFIX="\[\e]0;\u@\h: \w\a\]"
+
+# if [ -f /etc/bashrc ]; then
+#     . /etc/bashrc   # --> Read /etc/bashrc, if present.
+# fi
+
+# if [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+# fi
