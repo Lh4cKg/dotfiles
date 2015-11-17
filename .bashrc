@@ -93,8 +93,9 @@ NF2='\033[38;5;56m'
 
 # PS1 = \n \[\e[1;37m\]┌─[\[\e[1;36m\] \d \[\e[1;31m\]\T \[\e[1;37m\]] \n\[\e[1;37m\] └─[ \[\e[1;34m\]@ \[\e[1;32m\]\w \[\e[1;37m\]]\[\e[1;35m\]---> \[\e[0;37m\]
 
-export PS1="\[$NF1\]\d\[$Red\] \T\[$White\]\n\[$Cyan\][\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]]\[$Red\]-\[$Blue\]-\[$Blue\]>\[$Green\] "
+#export PS1="\[$NF1\]\d\[$Red\] \T\[$White\]\n\[$Cyan\][\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]]\[$Red\]-\[$Blue\]-\[$Blue\]>\[$Green\] "
 
+export PS1="\[$Cyan\]|\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]|\[$Red\]>\[$Green\]>\[$Blue\]>\[$Green\] "
 
 ##############################
 # autocomplite xfce-terminal
