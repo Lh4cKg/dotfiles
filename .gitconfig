@@ -1,0 +1,72 @@
+[user]
+	name = Lasha Gogua
+	email = lhackg@yandex.com
+
+[core]
+	excludesfile = ~/.gitignore
+	quotepath = false
+
+[github]
+	user = Lh4cKg
+
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+
+#[alias]
+  #st = status -s -b
+	#ci = commit --verbose
+	#co = checkout
+	#di = diff
+	#dc = diff --cached
+	#amend = commit --amend
+	#aa = add --all
+	#ff = merge --ff-only
+	#pull = pull --rebase
+	#pullff = pull --ff-only
+	#fa = fetch --all
+	#pom = push origin master
+	#hist = "log --pretty=format:\"%h | %ad | %s%d [%an]\" --graph --date=short"
+	#msg = commit --allow-empty -m
+	#lol = log --pretty=oneline --abbrev-commit --graph --decorate
+	#unstage = reset HEAD
+	#new = ls-files --others --exclude-standard
+	#added = diff --cached --name-only
+	#rv = remote -v
+	#b = branch
+	#ds = diff --stat=160,120
+
+	#head = !git r -1
+	#h = !git head
+	#hp = "!. ~/.githelpers && show_git_head"
+	#r = !GIT_NO_PAGER=1 git l -30
+	#ra = !git r --all
+	#l = "!. ~/.githelpers && pretty_git_log"
+	#la = !git l --all
+
+
+#[branch "master"]
+#	remote = origin
+#	merge = refs/heads/master
+#
+#[branch "dev"]
+#	remote = origin
+#	merge = refs/heads/dev
+
+[push]
+	default = current
+
+[help]
+	autocorrect = 1
+
+[include]
+	path = .gitconfig.local
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
+[credential]
+	helper = cache
