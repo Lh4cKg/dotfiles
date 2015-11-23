@@ -163,9 +163,12 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias h='history'
+alias hg='history | grep'
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
+alias pag='ps aux | grep'
+alias k9='kill -9'
 
 # PATH variables
 alias path='echo -e ${PATH//:/\\n}'
