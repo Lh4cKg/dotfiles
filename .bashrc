@@ -169,6 +169,7 @@ alias which='type -a'
 alias ..='cd ..'
 alias pag='ps aux | grep'
 alias k9='kill -9'
+alias cl='clear'
 
 # PATH variables
 alias path='echo -e ${PATH//:/\\n}'
