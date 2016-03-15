@@ -1,3 +1,14 @@
+# #
+# # ~/.bashrc
+# #
+
+# # If not running interactively, don't do anything
+# [[ $- != *i* ]] && return
+
+# alias ls='ls --color=auto'
+# PS1='[\u@\h \W]\$ '
+
+
 #
 # ~/.bashrc
 #
@@ -98,7 +109,7 @@ NF2='\033[38;5;56m'
 export PS1="\[$Cyan\]|\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]|\[$Red\]>\[$Green\]>\[$Blue\]>\[$Green\] "
 
 ##############################
-# autocomplite xfce-terminal
+# autocomplite qterminal-terminal
 ##############################
 
 complete -cf sudo
@@ -199,42 +210,28 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 # less 
 alias more='less'
 
-#################################
-#   my project commands
-##################################
-# hotel -> temporary command
-#alias hotel="cd env/project && source bin/activate && cd hotel"
+#############################
+# django completion
+#############################
 
-# neweco -> temporary command
-alias neweco="cd env/project && source bin/activate && cd neweco"
+source ~/.django-completion.bash
 
-# store -> temporary command
-#alias store="cd env/project && source bin/activate && cd store"
+# activate -> vmix
+alias env_vmix="cd dev/projects/env_vmixdotge && source bin/activate && cd vmixdotge"
 
-# profc -> temporary command
-#alias profc="cd env/project && source bin/activate && cd profc"
+# activate -> vmix
+alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd shopsonotge"
 
-# signup -> temporary command
-alias signup="cd env/project && source bin/activate && cd signup"
-
-# bsi -> temporary command
-alias bsi="cd env/project && source bin/activate && cd bsi"
-
-# bukinistebi -> temporary command
-alias bukinistebi="cd old && source bin/activate && cd bukinistebi"
+# activate -> bukinistebi
+alias env_buk="cd dev/projects/env_bukinistebi && source bin/activate && cd bukinistebi"
+alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd django_project"
 
 ###############################
 ##  python3 custom commands  ##
 ###############################
 
-# virtualenv -> env/project activate
-alias env="cd env/project && source bin/activate"
-
-# virtualenv -> old/project activate
-alias oldp="cd old/project && source bin/activate"
-
-# virtualenv -> old activate
-alias old="cd old && source bin/activate"
+# virtualenv -> dev/projects
+alias dev="cd dev/projects"
 
 # source bin/activare
 alias a="source bin/activate"
@@ -427,4 +424,5 @@ alias yre="yaourt -R"
 
 # if [ -f /etc/bash_completion ]; then
 #     . /etc/bash_completion
-# fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
