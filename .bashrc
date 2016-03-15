@@ -1,22 +1,9 @@
-# #
-# # ~/.bashrc
-# #
-
-# # If not running interactively, don't do anything
-# [[ $- != *i* ]] && return
-
-# alias ls='ls --color=auto'
-# PS1='[\u@\h \W]\$ '
-
-
-#
 # ~/.bashrc
-#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#alias ls='ls --color=auto'
+
 # git branch prompt
 source ~/.git-prompt.sh
 
@@ -100,11 +87,6 @@ On_IWhite='\e[0;107m'   # White
 NF1='\033[38;5;6m'
 NF2='\033[38;5;56m'
 
-#PS1='[\u@\h \W]\$ '
-
-# PS1 = \n \[\e[1;37m\]┌─[\[\e[1;36m\] \d \[\e[1;31m\]\T \[\e[1;37m\]] \n\[\e[1;37m\] └─[ \[\e[1;34m\]@ \[\e[1;32m\]\w \[\e[1;37m\]]\[\e[1;35m\]---> \[\e[0;37m\]
-
-#export PS1="\[$NF1\]\d\[$Red\] \T\[$White\]\n\[$Cyan\][\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]]\[$Red\]-\[$Blue\]-\[$Blue\]>\[$Green\] "
 
 export PS1="\[$Cyan\]|\[$Green\]\u\[$White\] {\[$NF2\]\W\[$White\]}\[$Purple\]$(__git_ps1)\[$Green\]|\[$Red\]>\[$Green\]>\[$Blue\]>\[$Green\] "
 
@@ -348,7 +330,8 @@ alias grro="git remote remove origin"
 ##   Ruby     ##
 ################
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/bin:$PATH"
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 ##################
 ##  pacman
@@ -424,5 +407,3 @@ alias yre="yaourt -R"
 
 # if [ -f /etc/bash_completion ]; then
 #     . /etc/bash_completion
-
-export PATH="$HOME/.rbenv/bin:$PATH"
