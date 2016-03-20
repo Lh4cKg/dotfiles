@@ -231,9 +231,11 @@ alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd djang
 # virtualenv -> dev/projects
 alias dev="cd dev/projects"
 
-# source bin/activare
+# source bin/activate
 alias a="source bin/activate"
 alias ac="source bin/activate"
+# source bin/activate to navigate up one directory level
+alias ..a="source ../bin/activate"
 
 # deactivate
 alias d="deactivate"
