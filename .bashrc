@@ -192,6 +192,22 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 # less 
 alias more='less'
 
+##############################
+#  aliases for python 3.5
+##############################
+
+# start python
+alias py="python"
+
+# python inspect interactively after running script
+alias pyi="python -i" # python -i /path/somefile.py
+
+# python debug output from parser
+alias pyd="python -d" # python -d somefile.py
+
+# python program passed in as string (terminates option list)
+alias pyc="python -c" # python -c "import sys; print(sys.version,sys.platform)"
+
 #############################
 # django completion
 #############################
@@ -208,9 +224,9 @@ alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd sh
 alias env_buk="cd dev/projects/env_bukinistebi && source bin/activate && cd bukinistebi"
 alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd django_project"
 
-###############################
-##  python3 custom commands  ##
-###############################
+##################################
+## command aliases for project  ##
+##################################
 
 # virtualenv -> dev/projects
 alias dev="cd dev/projects"
