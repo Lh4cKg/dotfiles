@@ -160,7 +160,6 @@ alias hg='history | grep'
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
-alias ...='cd ../'
 alias pag='ps aux | grep'
 alias k9='kill -9'
 alias cl='clear'
@@ -197,8 +196,14 @@ alias more='less'
 #  aliases for python 3.5
 ##############################
 
-# start python
+# start python3.5.1
 alias py="python"
+
+# start python3.3.6
+alias py3="python3.3"
+
+# start python2.7.11
+alias py2="python2"
 
 # python inspect interactively after running script
 alias pyi="python -i" # python -i /path/somefile.py
@@ -219,23 +224,23 @@ source ~/.django-completion.bash
 alias env_vmix="cd dev/projects/env_vmixdotge && source bin/activate && cd vmixdotge"
 
 # activate -> vmix
-alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd shopsonotge"
+alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd shopsondotge"
 
 # activate -> bukinistebi
 alias env_buk="cd dev/projects/env_bukinistebi && source bin/activate && cd bukinistebi"
 alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd django_project"
 
-##################################
-## command aliases for project  ##
-##################################
+###############################
+##  python3 custom commands  ##
+###############################
 
 # virtualenv -> dev/projects
 alias dev="cd dev/projects"
 
-# source bin/activate
+# source bin/activare
 alias a="source bin/activate"
 alias ac="source bin/activate"
-# source bin/activate to navigate up one directory level
+# source bin/activare to navigate up one directory level
 alias ..a="source ../bin/activate"
 
 # deactivate
