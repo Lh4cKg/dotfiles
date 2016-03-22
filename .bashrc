@@ -230,9 +230,9 @@ alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd sh
 alias env_buk="cd dev/projects/env_bukinistebi && source bin/activate && cd bukinistebi"
 alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd django_project"
 
-###############################
-##  python3 custom commands  ##
-###############################
+###################################
+##  command aliases for project  ##
+###################################
 
 # virtualenv -> dev/projects
 alias dev="cd dev/projects"
