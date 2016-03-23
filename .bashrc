@@ -196,6 +196,8 @@ alias more='less'
 #  aliases for python 3.5
 ##############################
 
+export PYTHONSTARTUP=~/.pythonrc
+
 # start python3.5.1
 alias py="python"
 
@@ -220,6 +222,9 @@ alias pyc="python -c" # python -c "import sys; print(sys.version,sys.platform)"
 
 source ~/.django-completion.bash
 
+# activate -> soft
+alias env_soft="cd dev/projects/soft && source bin/activate"
+
 # activate -> vmix
 alias env_vmix="cd dev/projects/env_vmixdotge && source bin/activate && cd vmixdotge"
 
@@ -230,9 +235,9 @@ alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd sh
 alias env_buk="cd dev/projects/env_bukinistebi && source bin/activate && cd bukinistebi"
 alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd django_project"
 
-###################################
-##  command aliases for project  ##
-###################################
+###############################
+##  command aliases for project          ##
+###############################
 
 # virtualenv -> dev/projects
 alias dev="cd dev/projects"
@@ -286,6 +291,16 @@ alias pmc="python manage.py compilemessages -l"
 ##########################
 ##       pip            ##
 ##########################
+
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
+# pip bash completion end
 
 # pip install
 alias ppi="pip install"
@@ -431,3 +446,4 @@ alias yre="yaourt -R"
 
 # if [ -f /etc/bash_completion ]; then
 #     . /etc/bash_completion
+
