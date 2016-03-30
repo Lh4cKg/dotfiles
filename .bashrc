@@ -235,6 +235,9 @@ alias env_shop="cd dev/projects/env_shopsondotge && source bin/activate && cd sh
 alias env_buk="cd dev/projects/env_bukinistebi && source bin/activate && cd bukinistebi"
 alias env_bK="cd dev/projects/env_bukinistebi && source bin/activate && cd django_project"
 
+# elitremont
+alias env_bK="cd dev/projects/env_elitremont && source bin/activate && cd elitremontdotge"
+
 ###############################
 ##  command aliases for project          ##
 ###############################
