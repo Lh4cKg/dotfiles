@@ -173,6 +173,8 @@ alias dufs='du -skh'  # file size
 alias du='du -kh'    # show list file size
 alias df='df -kTh'
 
+alias ul='cut -d: -f1 /etc/passwd' # user list
+
 ###################################
 #   ls commands
 ###################################
