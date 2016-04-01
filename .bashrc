@@ -168,7 +168,9 @@ alias cl='clear'
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
-alias du='du -kh' 
+
+alias dufs='du -skh'  # file size 
+alias du='du -kh'    # show list file size
 alias df='df -kTh'
 
 ###################################
@@ -176,6 +178,7 @@ alias df='df -kTh'
 ###################################
 # Add colors for filetype and human-readable sizes by default on ls
 alias ls='ls -h --color'
+alias lfs='ls -lh --color'
 alias lx='ls -lXB'         #  Sort by extension.
 alias lk='ls -lSr'         #  Sort by size, biggest last.
 alias lt='ls -ltr'         #  Sort by date, most recent last.
