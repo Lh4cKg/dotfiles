@@ -160,6 +160,13 @@ alias hg='history | grep'
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
 alias pag='ps aux | grep'
 alias k9='kill -9'
 alias cl='clear'
@@ -326,6 +333,9 @@ alias ppl="pip list"
 ###########################
 ##         git           ##
 ###########################
+
+# git
+alias g="git"
 
 # git init
 alias gi="git init"
